@@ -1,0 +1,21 @@
+node_modules
+.env
+
+# ==============================================================================
+# GITIGNORE CONFIGURATION FILE (.gitignore)
+# ==============================================================================
+# This file tells Git which files, folders, or sensitive data to IGNORE.
+# Anything listed here will not be tracked, committed, or pushed to GitHub.
+# ==============================================================================
+
+# 1. DEPENDENCY FOLDER
+# Ignores the 'node_modules' directory.
+# - Why: Contains thousands of external npm packages installed locally.
+# - Reason: Extremely large in file size; can easily be re-installed using 'npm install'.
+#node_modules
+
+# 2. ENVIRONMENT & SECRETS FILE
+# Ignores the '.env' file.
+# - Why: Stores secret environment variables (e.g., MONGO_URI database password, API keys).
+# - Reason: Keeps sensitive credentials private and prevents them from leaking on GitHub.
+#.env

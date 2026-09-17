@@ -1,0 +1,44 @@
+.notfound-bg-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+.notfound-bg-container h1{
+    color: #720730; 
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+}
+.notfound-bg-container h2{
+    color: #720730; 
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+}
+.notfound-bg-container p{
+    color: #720730; 
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+}
+.action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 24px;
+}
+/* Common base styles for both buttons */
+.action-buttons button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: #39013b;
+  color: #ffffff;
+}
+
+.action-buttons  button:hover {
+  background-color: #650e4b;
+}

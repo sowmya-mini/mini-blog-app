@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap');
+
+.login-bg-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0eded;
+}
+.login-title{
+    color: #720730; 
+    font-family: 'Monsieur La Doulaise', cursive;
+    font-size: 45px;
+    margin-bottom: 0px;
+}
+h2{
+    color: #720730; 
+    margin-top: 0px;
+    margin-bottom:10px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    padding: 30px;
+    border: 2px solid #f6acda; 
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.15); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+}
+
+.login-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #720730; 
+    font-size: 14px;
+}
+
+.login-form input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #720730;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #720730; 
+}
+
+.login-form input::placeholder {
+    color: #720730;
+    opacity: 0.5; /*make the placeholder text lighter instead of darker*/
+}
+.login-buttons{
+    display: flex;
+    gap:15px;
+}
+
+.login-btn {
+    flex:1;
+    padding: 12px;
+    background-color: #720730; 
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color
+}
+/* :hover - Triggers when the mouse pointer moves over the button */
+.login-btn:hover {
+  background-color: #540422;
+  border-color: #540422;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+/* transform: translateY(-2px) - Moves the button UP by 2px to create a lift effect */
+
+/* :active - Triggers at the exact moment the button is being clicked down */
+.login-btn:active {
+  transform: translateY(0);
+}
+
+.sign-up-title{
+    color: #720730; 
+    font-family: 'Inter', sans-serif;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.signup-message {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.back-login-btn {
+    color:#ffffff;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #540422;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.back-login-btn:hover {
+    background-color: #af2457;
+}

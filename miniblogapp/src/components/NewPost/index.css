@@ -1,0 +1,67 @@
+.new-post-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.new-post-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.new-post-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.new-post-container input,
+.new-post-container textarea,
+.new-post-container select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.new-post-container input:focus,
+.new-post-container textarea:focus,
+.new-post-container select:focus {
+  border-color: #310228;
+}
+
+.new-post-container textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.new-post-container button {
+  padding: 12px;
+  background-color: #be069c;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.new-post-container button:hover {
+  background-color: #801f77;
+}
+.error-message {
+  color: #6c0703;
+  background-color: #f9d6d5;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}

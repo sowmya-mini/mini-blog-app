@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+.nav-bg-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    width: 100%;
+    padding: 0 24px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.nav-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-logo-container h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #480532;
+    font-family: 'Monsieur La Doulaise', cursive;
+}
+
+.nav-logo-container p {
+    margin: 0;
+    font-size: 12px;
+    color: #8b4f79;
+    font-family: 'Inter', sans-serif;
+}
+
+.nav-search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    width: 280px;
+    padding: 6px 12px;
+    background-color: #f8fafc;
+    color: #64748b;
+}
+
+.nav-search-container input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 14px;
+    color: #0f172a;
+}
+.nav-actions-container{
+    display: flex;
+    align-items: center;
+    gap:12px;
+}
+.create-post-btn{
+    background-color: transparent;
+    color: rgb(228, 110, 110);
+    border: 2px solid rgb(228, 110, 110);
+    padding:10px;
+    font-weight: 500;
+    font-size:15px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.logout-btn{
+    background-color: rgb(228, 110, 110);
+    color: #ffffff;
+    border:none;
+    padding:10px;
+    font-size:15px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+}
