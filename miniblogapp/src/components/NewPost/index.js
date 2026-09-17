@@ -24,15 +24,18 @@ class NewPost extends Component {
         event.preventDefault()
         const { title, content, author, category } = this.state
         const jwtToken = Cookies.get('jwt_token')
-
-        const response = await fetch('http://localhost:5000/api/posts', {
+        // const url = "http://localhost:5000/api/posts"
+        const url = "https://mini-blog-app-server.onrender.com/api/posts"
+        const options = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${jwtToken}`
             },
             body: JSON.stringify({ title, content, author, category })
-        })
+        }
+
+        const response = await fetch(url,options)
 
         if (response.ok) {
             const newPost = await response.json()

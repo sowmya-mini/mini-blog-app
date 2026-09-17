@@ -52,7 +52,8 @@ class Home extends Component {
          */
     getBlogPosts = async () => {
         const jwtToken = Cookies.get('jwt_token')
-        const url = 'http://localhost:5000/api/posts'
+        // const url = 'http://localhost:5000/api/posts'
+        const url = 'https://mini-blog-app-server.onrender.com/api/posts'
         const options = {
             method: 'GET',
             headers: { Authorization: `Bearer ${jwtToken}` }
@@ -97,7 +98,8 @@ class Home extends Component {
      */
     onDeletePost = async (id) => {
         const jwtToken = Cookies.get('jwt_token')
-        const url = `http://localhost:5000/api/posts/${id}`
+        // const url = `http://localhost:5000/api/posts/${id}`
+        const url = `https://mini-blog-app-server.onrender.com/api/posts/${id}`
         const options = {
             method: 'DELETE',
             headers: { Authorization: `Bearer ${jwtToken}` }

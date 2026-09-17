@@ -117,7 +117,8 @@ class Login extends Component {
         this.setState({ loginMessage: '' });
         const { userName, password } = this.state;
         const userDetails = { userName, password };
-        const url = "http://localhost:5000/api/login";
+        // const url = "http://localhost:5000/api/login";
+        const url = "https://mini-blog-app-server.onrender.com/api/login";
         const options = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -155,7 +156,8 @@ class Login extends Component {
         event.preventDefault()
         const { signUpUserName, signUpPassword } = this.state
         const userDetails = { userName: signUpUserName, password: signUpPassword }
-        const url = "http://localhost:5000/api/register"
+        // const url = "http://localhost:5000/api/register"
+        const url = "https://mini-blog-app-server.onrender.com/api/register"
         const options = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
