@@ -52,10 +52,54 @@ mini-blog/
 
 6.Real-time Query Filtering: Search input passing real-time state down to parent post feeds.
 
-# 🛠️ Tech Stack & Dependencies
+# 🚀 Getting Started & Local Setup
+Prerequisites
+Node.js (v14+ installed)
 
+MongoDB (Local instance or MongoDB Atlas account)
+
+# 1. Backend Setup (mini-blog-server)
+Open terminal and navigate to the backend directory:
+
+Bash
+cd mini-blog-server
+
+Install dependencies:
+
+Bash
+npm install
+Create a .env file in the mini-blog-server directory with the following variables:
+
+Code snippet
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+Start the server:
+
+Bash
+node server.js
+The backend will run on http://localhost:5000
+
+# 2. Frontend Setup (miniblogapp)
+Open a new terminal window and navigate to the frontend directory:
+
+Bash
+cd miniblogapp
+Install dependencies:
+
+Bash
+npm install
+Start the React development server:
+
+Bash
+npm start
+The frontend will run on http://localhost:3000
+
+# 3. Account Access
+No default credentials are provided. Simply navigate to http://localhost:3000 in your browser and register a new account to test authentication and features locally.
+
+## 🛠️ Tech Stack & Dependencies
 # Frontend (miniblogapp):
-
 Library: React.js (Class & Functional Components)
 
 Routing: react-router-dom (v5)
@@ -67,7 +111,6 @@ Cookie Management: js-cookie
 Styling: CSS3
 
 # Backend (mini-blog-server):
-
 Runtime: Node.js
 
 Framework: Express.js
