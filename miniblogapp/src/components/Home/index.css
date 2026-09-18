@@ -163,7 +163,7 @@
     font-weight: bold;
 }
 
-.create-post-btn{
+.home-create-post-btn{
     background-color: transparent;
     color: #7a2356;
     border: 2px solid #46042a;
@@ -173,4 +173,41 @@
     font-family: 'Roboto', sans-serif;
     border-radius: 5px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .home-bg-container {
+        padding: 20px 16px;
+    }
+
+    .category-options {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .posts-grid {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .post-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .no-posts-container {
+        height: auto;
+        padding: 30px 10px;
+    }
+    .home-create-post-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        min-width: 0; /* Prevents flex items from overflowing or collapsing */
+        padding: 8px 12px;
+        text-align: center;
+        text-decoration: none;
+    }
 }

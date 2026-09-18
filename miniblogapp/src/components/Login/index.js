@@ -118,6 +118,7 @@ class Login extends Component {
         const { userName, password } = this.state;
         const userDetails = { userName, password };
         // const url = "http://localhost:5000/api/login";
+        // used below render url : replaced created backend server with render server to make the app live 
         const url = "https://mini-blog-app-server.onrender.com/api/login";
         const options = {
             method: 'POST',
@@ -157,6 +158,7 @@ class Login extends Component {
         const { signUpUserName, signUpPassword } = this.state
         const userDetails = { userName: signUpUserName, password: signUpPassword }
         // const url = "http://localhost:5000/api/register"
+        // Replaced local port 5000 backend server with OnRender server for production deployment so render is now backend server
         const url = "https://mini-blog-app-server.onrender.com/api/register"
         const options = {
             method: 'POST',

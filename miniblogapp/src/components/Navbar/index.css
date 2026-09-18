@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -57,30 +58,101 @@
     font-size: 14px;
     color: #0f172a;
 }
-.nav-actions-container{
+
+.nav-actions-container {
     display: flex;
     align-items: center;
-    gap:12px;
+    gap: 12px;
 }
-.create-post-btn{
+
+.create-post-btn {
     background-color: transparent;
     color: rgb(228, 110, 110);
     border: 2px solid rgb(228, 110, 110);
-    padding:10px;
+    padding: 10px;
     font-weight: 500;
-    font-size:15px;
+    font-size: 15px;
     font-family: 'Roboto', sans-serif;
     border-radius: 5px;
     cursor: pointer;
 }
-.logout-btn{
+
+.create-post-btn-xs {
+    display: none;
+}
+
+.logout-btn {
     background-color: rgb(228, 110, 110);
     color: #ffffff;
-    border:none;
-    padding:10px;
-    font-size:15px;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.logout-btn-xs {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .nav-bg-container {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .nav-logo-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-right: 12px;
+    }
+
+    .nav-actions-container {
+        margin-left: 10px;
+    }
+
+    .nav-logo-container h2 {
+        font-size: 16px;
+    }
+
+    .nav-logo-container p {
+        font-size: 8px;
+        white-space: nowrap;
+    }
+
+    .nav-search-container {
+
+        width: 200px;
+
+    }
+
+    .create-post-btn {
+        display: none;
+    }
+
+    .create-post-btn-xs {
+        display: block;
+        border: none;
+        outline: none;
+        cursor: ponter;
+        background-color: transparent;
+
+    }
+
+    .logout-btn {
+        display: none;
+    }
+
+    .logout-btn-xs {
+        display: block;
+        border: none;
+        outline: none;
+        cursor: ponter;
+        background-color: transparent;
+
+    }
 }

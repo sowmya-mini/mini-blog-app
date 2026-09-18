@@ -9,7 +9,7 @@ const Post = require('./models/post');
 const User = require('./models/user');
 
 const app = express();
-// Configure CORS for my  Netlify site
+// Configure CORS for  Netlify site
 app.use(cors({
   origin: ['https://sowmya-mini-blog-app.netlify.app', 'http://localhost:3000'],
   credentials: true

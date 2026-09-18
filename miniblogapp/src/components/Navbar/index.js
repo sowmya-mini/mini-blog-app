@@ -1,5 +1,6 @@
 import { Component } from 'react'
-import { FaSearch } from "react-icons/fa"
+import { FaSearch,FaEdit  } from "react-icons/fa"
+import { TbLogout } from "react-icons/tb";
 import { Link, withRouter } from 'react-router-dom'
 import Cookies from 'js-cookie'
 import './index.css'
@@ -43,8 +44,10 @@ class Navbar extends Component {
                 <div className="nav-actions-container">
                     <Link to="/new-post">
                         <button type="button" className="create-post-btn">+ New Post</button>
+                        <button type="button" className="create-post-btn-xs" ><FaEdit size={22}/></button>
                     </Link>
                     <button type="button" className="logout-btn" onClick={this.onLogout}>Logout</button>
+                    <button type="button" className="logout-btn-xs" onClick={this.onLogout}><TbLogout size={24}/></button>
                 </div>
             </div>
         )

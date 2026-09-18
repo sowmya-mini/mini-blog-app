@@ -42,3 +42,33 @@
 .action-buttons  button:hover {
   background-color: #650e4b;
 }
+
+@media screen and (max-width: 767px) {
+    .notfound-bg-container {
+        padding: 0 16px;
+        text-align: center;
+    }
+    
+    .notfound-bg-container h1 {
+        font-size: 28px;
+    }
+    
+    .notfound-bg-container h2 {
+        font-size: 22px;
+    }
+    
+    .notfound-bg-container p {
+        font-size: 16px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    
+    .action-buttons button {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}

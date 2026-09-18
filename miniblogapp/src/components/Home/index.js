@@ -53,6 +53,7 @@ class Home extends Component {
     getBlogPosts = async () => {
         const jwtToken = Cookies.get('jwt_token')
         // const url = 'http://localhost:5000/api/posts'
+        // Replaced local port 5000 backend server with OnRender server for production deployment so render is now backend server
         const url = 'https://mini-blog-app-server.onrender.com/api/posts'
         const options = {
             method: 'GET',
@@ -99,6 +100,7 @@ class Home extends Component {
     onDeletePost = async (id) => {
         const jwtToken = Cookies.get('jwt_token')
         // const url = `http://localhost:5000/api/posts/${id}`
+        // Replaced local port 5000 backend server with OnRender server for production deployment so render is now backend server
         const url = `https://mini-blog-app-server.onrender.com/api/posts/${id}`
         const options = {
             method: 'DELETE',
@@ -219,8 +221,8 @@ class Home extends Component {
                         ) : (
                             <div className="no-posts-container">
                                 <p>No posts available in this category.</p>
-                                <Link to="/new-post">
-                                    <button type="button" className="create-post-btn">
+                                <Link to="/new-post" style={{ textDecoration: 'none' }}>
+                                    <button type="button" className="home-create-post-btn">
                                         + Create New Post
                                     </button>
                                 </Link>
