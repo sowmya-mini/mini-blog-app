@@ -10,7 +10,8 @@ class Login extends Component {
         signUpPassword: '',
         showSignUp: false,
         loginMessage: '',
-        signUpMessage: ''
+        signUpMessage: '',
+        isLoading:false
     }
 
     /**
@@ -69,7 +70,9 @@ class Login extends Component {
     toggleSignupPopup = () => {
         this.setState(prevState => ({
             showSignUp: !prevState.showSignUp,
-            signUpMessage: '' // reset message when toggling
+            signUpMessage: '', // reset message when toggling
+            signUpUserName: '',// Clears the username field after registration
+            signUpPassword: '' // Clears the password field after registration
         }))
     }
 
@@ -100,7 +103,7 @@ class Login extends Component {
      * @param {string} errMsg - Error message received from backend or network error
      */
     onSubmitFailure = errMsg => {
-        this.setState({ loginMessage: errMsg })
+        this.setState({ loginMessage: errMsg,isLoading:false })
     }
 
     /**
@@ -113,9 +116,28 @@ class Login extends Component {
      */
     onSubmitLoginForm = async event => {
         event.preventDefault();
-        // Clear old login messages before making request
-        this.setState({ loginMessage: '' });
         const { userName, password } = this.state;
+
+        /**
+         * CLIENT-SIDE VALIDATION: Empty Fields Check
+         * 
+         * Why this is used here:
+         * 1. Even though `loginMessage` is rendered dynamically in `renderLoginForm`, 
+         *    we must validate the fields *before* setting `isLoading` to true. If we 
+         *    didn't check this first, clicking login with empty fields would trigger 
+         *    the "Logging in..." button state and disable the inputs needlessly.
+         * 2. The empty `return;` acts as a "guard clause" or circuit breaker. It stops 
+         *    the execution of the function immediately, preventing the fetch request 
+         *    from being sent to the backend server with missing credentials.
+         */
+            if (userName === "" || password === "") {
+                this.setState({loginMessage: 'Username and password are required'})
+                return ;
+            }
+
+        // Clear old login messages before making request and Turn on loading state
+        this.setState({ loginMessage: '',isLoading:true });
+
         const userDetails = { userName, password };
         // const url = "http://localhost:5000/api/login";
         // used below render url : replaced created backend server with render server to make the app live 
@@ -132,7 +154,7 @@ class Login extends Component {
             // console.log(response);
             if (data.success) {
                 // alert(data.message)
-                this.setState({ loginMessage: '' });
+                this.setState({ loginMessage: '', isLoading:false });
                 this.onSubmitSuccess(data.jwt_token)
             }
             else {
@@ -142,7 +164,8 @@ class Login extends Component {
             }
         } catch (err) {
             console.log("Fetch error:", err.message)
-            this.setState({ loginMessage: 'Unable to connect to server. Please try again later.' });
+            this.setState({ loginMessage: 'Unable to connect to server. Please try again later.', 
+            isLoading:false });
         }
     };
 
@@ -183,19 +206,21 @@ class Login extends Component {
     }
 
     renderLoginForm = () => {
-        const { userName, password, loginMessage } = this.state
+        const { userName, password, loginMessage,isLoading } = this.state
         return (
             <div className="login-bg-container">
                 <h1 className="login-title">Let's Blog </h1>
                 <h2>A Little Bit of Everything</h2>
                 <form className="login-form" onSubmit={this.onSubmitLoginForm}>
                     <label htmlFor="username">USERNAME</label>
-                    <input id="username" type="text" placeholder="Username" value={userName} onChange={this.onChangeUserName} />
+                    <input id="username" type="text" placeholder="Username" value={userName} onChange={this.onChangeUserName} disabled={isLoading}/>
                     <label htmlFor="password">PASSWORD</label>
-                    <input id="password" type="password" placeholder="Password" value={password} onChange={this.onChangePassword} />
+                    <input id="password" type="password" placeholder="Password" value={password} onChange={this.onChangePassword} disabled={isLoading}/>
                     <div className="login-buttons">
-                        <button type="submit" className="login-btn">Login</button>
-                        <button type="button" className="login-btn signup-btn" onClick={this.toggleSignupPopup}>Sign up</button>
+                        <button type="submit" className="login-btn" disabled={isLoading}>
+                            {isLoading  ? 'Logging in...' : 'Login'}
+                        </button>
+                        <button type="button" className="login-btn signup-btn" onClick={this.toggleSignupPopup} disabled={isLoading}>Sign up</button>
                     </div>
                 </form>
                 {loginMessage ? (
